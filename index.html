@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="nuit">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vocabulaire d'anglais</title>
+<meta name="description" content="Révise ton vocabulaire d'anglais : cartes à retourner, liste et quiz (Unit 1A, 1B, idioms).">
+<meta name="theme-color" content="#0a0a1c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vocabulaire d'anglais — cartes & quiz">
+<meta property="og:description" content="442 mots : cartes à retourner, liste, quiz. Unit 1A, 1B et idioms.">
+<meta property="og:image" content="og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%238b5cf6'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EEN%3C/text%3E%3C/svg%3E">
+
+<style>
+:root{--r:20px}
+[data-theme=nuit]{--bg:#0a0a1c;--bg2:#17103a;--card:#16163a;--card2:#1f1f4d;--txt:#f1f0ff;--mut:#9a98c8;--a:#8b5cf6;--b:#22d3ee;--line:#ffffff1a}
+[data-theme=ocean]{--bg:#03121c;--bg2:#06324a;--card:#0a2434;--card2:#0f3a52;--txt:#eaf8ff;--mut:#86b4c9;--a:#38bdf8;--b:#34d399;--line:#ffffff1a}
+[data-theme=foret]{--bg:#06130b;--bg2:#10321c;--card:#0d2316;--card2:#143a24;--txt:#eefcf1;--mut:#8dbb9a;--a:#4ade80;--b:#facc15;--line:#ffffff1a}
+[data-theme=aurore]{--bg:#190a12;--bg2:#431232;--card:#2a0f1d;--card2:#43182d;--txt:#fff0f4;--mut:#cf9aae;--a:#fb7185;--b:#fbbf24;--line:#ffffff1a}
+[data-theme=clair]{--bg:#f5f3ff;--bg2:#e0f2fe;--card:#ffffff;--card2:#f1eefe;--txt:#1e1b3a;--mut:#6b6896;--a:#7c3aed;--b:#0ea5e9;--line:#1e1b3a1a}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+body{font-family:Inter,ui-sans-serif,system-ui,"Segoe UI",Roboto,sans-serif;color:var(--txt);min-height:100vh;
+background:radial-gradient(900px 500px at 10% -10%,color-mix(in srgb,var(--a) 35%,transparent),transparent),radial-gradient(800px 500px at 100% 0%,color-mix(in srgb,var(--b) 28%,transparent),transparent),linear-gradient(160deg,var(--bg),var(--bg2));background-attachment:fixed;transition:.4s}
+.wrap{max-width:980px;margin:0 auto;padding:22px 16px 60px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+h1{font-size:clamp(24px,5vw,36px);font-weight:800;letter-spacing:-.5px;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);font-size:14px;margin-top:2px}
+.themes{display:flex;gap:8px}
+.dot{width:26px;height:26px;border-radius:50%;border:2px solid var(--line);cursor:pointer;transition:.2s}
+.dot:hover{transform:scale(1.15)}.dot.on{outline:2px solid var(--txt);outline-offset:2px}
+.panel{background:color-mix(in srgb,var(--card) 80%,transparent);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:14px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.lbl{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--mut);margin:0 0 8px;font-weight:700}
+.chip{border:1px solid var(--line);background:var(--card2);color:var(--txt);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;font-family:inherit}
+.chip:hover{transform:translateY(-1px);border-color:var(--a)}
+.chip.on{background:linear-gradient(135deg,var(--a),var(--b));color:#fff;border-color:transparent;box-shadow:0 6px 18px -6px var(--a)}
+.chip small{opacity:.7;font-weight:500;margin-left:4px}
+.seg{display:inline-flex;background:var(--card2);border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg button{border:0;background:transparent;color:var(--mut);padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;transition:.2s}
+.seg button.on{background:linear-gradient(135deg,var(--a),var(--b));color:#fff}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+input[type=search]{background:var(--card2);border:1px solid var(--line);color:var(--txt);padding:10px 14px;border-radius:999px;font-size:14px;min-width:190px;font-family:inherit;outline:0}
+input[type=search]:focus{border-color:var(--a)}
+.btn{border:1px solid var(--line);background:var(--card2);color:var(--txt);padding:10px 16px;border-radius:14px;font-weight:700;cursor:pointer;font-size:14px;font-family:inherit;transition:.2s}
+.btn:hover{transform:translateY(-1px);border-color:var(--a)}
+.btn.main{background:linear-gradient(135deg,var(--a),var(--b));color:#fff;border-color:transparent}
+.btn.ok{background:#16a34a;color:#fff;border-color:transparent}.btn.ko{background:#e11d48;color:#fff;border-color:transparent}
+.tg{display:flex;align-items:center;gap:6px;color:var(--mut);font-size:14px;cursor:pointer;user-select:none}
+.count{color:var(--mut);font-size:14px}
+/* liste */
+.cat{margin-top:20px}
+.cat h3{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.cat h3::before{content:"";width:8px;height:22px;border-radius:4px;background:linear-gradient(var(--a),var(--b))}
+.cat h3 span{color:var(--mut);font-weight:500;font-size:13px}
+.item{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:center;background:color-mix(in srgb,var(--card) 85%,transparent);border:1px solid var(--line);border-radius:14px;padding:11px 14px;margin-bottom:6px;transition:.2s}
+.item:hover{border-color:var(--a);transform:translateX(3px)}
+.item .en{font-weight:700}.item .fr{color:var(--mut)}
+.item .df{grid-column:1/-1;font-size:12px;color:var(--mut);font-style:italic;margin-top:-4px}
+.item.known{opacity:.5}
+.star{color:var(--b);font-size:11px;margin-left:5px;cursor:help}
+.ico{border:0;background:transparent;cursor:pointer;font-size:17px;color:var(--mut);padding:2px 6px;border-radius:8px}
+.ico:hover{color:var(--a);background:var(--card2)}
+@media(max-width:560px){.item{grid-template-columns:1fr auto}.item .fr{grid-column:1;grid-row:2}}
+/* cartes */
+.stage{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:8px}
+.prog{width:100%;max-width:560px;height:8px;background:var(--card2);border-radius:99px;overflow:hidden}
+.prog i{display:block;height:100%;background:linear-gradient(90deg,var(--a),var(--b));transition:.4s;border-radius:99px}
+.scene{width:100%;max-width:560px;height:330px;perspective:1400px;cursor:pointer}
+.flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.flip.f{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px;text-align:center;border:1px solid var(--line);box-shadow:0 24px 60px -20px #000a}
+.front{background:linear-gradient(145deg,var(--card2),var(--card))}
+.back{background:linear-gradient(145deg,var(--a),var(--b));color:#fff;transform:rotateY(180deg)}
+.face .tag{position:absolute;top:16px;left:20px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;opacity:.7;font-weight:700}
+.face .w{font-size:clamp(26px,6vw,40px);font-weight:800;line-height:1.2;word-break:break-word}
+.face .d{margin-top:12px;font-size:14px;opacity:.8;font-style:italic;max-width:90%}
+.face .hint{position:absolute;bottom:14px;font-size:12px;opacity:.5}
+.face .sp{position:absolute;top:10px;right:14px}
+.back .ico{color:#fff}
+.nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.empty{text-align:center;color:var(--mut);padding:50px 10px}
+/* quiz */
+.q{max-width:620px;margin:6px auto 0;text-align:center}
+.q .qt{font-size:clamp(26px,6vw,38px);font-weight:800;margin:14px 0 20px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.opts{grid-template-columns:1fr}}
+.opt{padding:16px;border-radius:16px;border:1px solid var(--line);background:var(--card2);color:var(--txt);font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;transition:.2s}
+.opt:hover:not(:disabled){border-color:var(--a);transform:translateY(-2px)}
+.opt.good{background:#16a34a;color:#fff;border-color:transparent}.opt.bad{background:#e11d48;color:#fff;border-color:transparent}
+.score{font-size:54px;font-weight:800;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hide{display:none!important}
+.foot{color:var(--mut);font-size:12px;text-align:center;margin-top:28px}
+
+.bar{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.bar h1{font-size:clamp(18px,4.5vw,26px);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .count{white-space:nowrap}
+.ibtn{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:var(--card2);color:var(--txt);font-size:18px;cursor:pointer}
+.ibtn:hover{border-color:var(--a)}
+.menuwrap{position:relative}
+.menu{position:absolute;right:0;top:46px;z-index:30;min-width:240px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px;box-shadow:0 20px 50px -10px #000a}
+.mi{border:0;background:var(--card2);color:var(--txt);padding:10px 12px;border-radius:10px;text-align:left;font-size:14px;cursor:pointer;font-family:inherit}
+.mi:hover{background:color-mix(in srgb,var(--a) 30%,var(--card2))}
+.bar2{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.bar2 .row{gap:6px}
+.bar2 .chip{padding:7px 12px;font-size:13px}
+.bar2 .seg button{padding:7px 12px;font-size:13px}
+.bar2 select{background:var(--card2);color:var(--txt);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;font-family:inherit;max-width:100%;cursor:pointer;outline:0}
+.bar2 select option{background:var(--card);color:var(--txt)}
+.scene{height:clamp(220px,46vh,330px)}
+.stage{gap:10px}
+.wrap{padding-bottom:100px}
+.navbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:10px;justify-content:center;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 45%)}
+.navbar .btn{min-height:50px;flex:1;max-width:170px;font-size:15px}
+.navbar #prev,.navbar #next{flex:0 0 56px}
+@media(max-width:700px){.foot{display:none}.bar2 .seg .lb{display:none}.bar .count{display:none}}
+
+.lstats{margin-bottom:6px}
+.lbar{display:flex;height:10px;border-radius:99px;background:var(--card2);overflow:hidden}
+.lbar i{display:block;height:100%;transition:.4s}
+.lleg{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;color:var(--mut);font-size:13px;margin-top:8px}
+.fb{text-align:center;padding:26px 16px;border-radius:24px;border:1px solid var(--line);margin-top:16px;background:var(--card)}
+.fb.good{background:color-mix(in srgb,#16a34a 28%,var(--card))}.fb.bad{background:color-mix(in srgb,#e11d48 24%,var(--card))}
+.fbt{font-size:22px;font-weight:800;margin:6px 0}.fba{font-size:clamp(24px,6vw,34px);font-weight:800;margin-top:8px}
+.kn{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:7px;background:var(--bg);color:var(--mut);font-size:12px;margin-right:8px}
+#la{background:var(--card2);color:var(--txt);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:18px;min-width:0;flex:1;max-width:380px;font-family:inherit;outline:0}
+#la:focus{border-color:var(--a)}
+#printArea{display:none}
+@media print{body>.wrap{display:none!important}body{background:#fff!important}#printArea{display:block;color:#111;font-family:Arial,sans-serif;font-size:11pt}
+#printArea h1{font-size:20pt;color:#6d28d9;background:none;-webkit-text-fill-color:#6d28d9}#printArea h3{margin:14pt 0 4pt;color:#6d28d9;font-size:12pt}
+#printArea table{width:100%;border-collapse:collapse;page-break-inside:auto}#printArea td{padding:3pt 6pt;border-bottom:1px solid #ddd;vertical-align:top}#printArea tr{page-break-inside:avoid}#printArea td:first-child{font-weight:bold;width:45%}#printArea small{color:#777;font-style:italic;display:block}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="bar">
+  <h1>Vocabulaire d'anglais</h1>
+  <span class="count" id="count"></span>
+  <button class="ibtn" id="themeBtn" title="Changer de thème">🎨</button>
+  <div class="menuwrap"><button class="ibtn" id="moreBtn" title="Plus">⋯</button>
+    <div class="menu hide" id="menu">
+      <div class="count" id="sub"></div>
+      <label class="tg"><input type="checkbox" id="hideKnown"> Masquer les mots sus</label>
+      <button class="mi" id="goalBtn"></button>
+      <button class="mi" id="shufBtn">🔀 Mélanger les cartes</button>
+      <button class="mi" id="rstBtn">↺ Réinitialiser les « sus »</button>
+      <button class="mi" id="dlpdf">⬇ Télécharger en PDF</button>
+      <button class="mi" id="dlcsv">⬇ Télécharger en CSV</button>
+    </div>
+  </div>
+</div>
+<div class="bar2">
+  <div class="row" id="units"></div>
+  <select id="catSel" aria-label="Catégorie"></select>
+  <div class="seg" id="modes"></div>
+  <button class="chip" id="dirBtn" title="Changer le sens"></button>
+</div>
+
+<div id="view"></div>
+<div id="printArea"></div>
+<div class="foot">Espace : retourner · ← → : naviguer · ↑ : je sais · ↓ : à revoir</div>
+</div>
+
+<script>
+/* ---------- DONNÉES ---------- */
+/* format : anglais = français ; ✦ en fin = ajouté/corrigé ; ;; = définition */
+const RAW=[
+{id:'1A',name:'Unit 1A',cats:{
+'Légumes':`tomato = tomate ✦
+potato = pomme de terre ✦
+spinach = épinards
+zucchini = courgette (américain)
+courgette = courgette
+pepper = poivron ✦
+red pepper = poivron rouge
+mushroom = champignon ✦
+Brussels sprouts = choux de Bruxelles
+beetroot = betterave
+beet = betterave
+aubergine = aubergine
+eggplant = aubergine (américain)
+cabbage = chou ✦
+cucumber = concombre ✦
+green beans = haricots verts ✦
+beans = haricots ✦
+onion = oignon ✦
+carrot = carotte ✦
+asparagus = asperge
+celery = céleri
+corn = maïs
+to peel = éplucher`,
+'Fruits & noix':`apple = pomme ✦
+banana = banane ✦
+orange = orange ✦
+lemon = citron ✦
+grapefruit = pamplemousse
+grapes = raisin ✦
+pomegranate = grenade ✦
+strawberry = fraise ✦
+raspberry = framboise ✦
+blueberry = myrtille ✦
+cherry = cerise ✦
+pineapple = ananas ✦
+avocado = avocat ✦
+watermelon = pastèque ✦
+melon = melon ✦
+mango = mangue ✦
+peach = pêche ✦
+pear = poire ✦
+apricot = abricot ✦
+plum = prune ✦
+berry = baie ✦
+seed = graine ✦
+peanut = cacahuète ✦
+almond = amande`,
+'Viandes':`beef = bœuf ✦
+chicken = poulet ✦
+duck = canard ✦
+lamb = agneau ✦
+pork = porc ✦
+ham = jambon ✦
+sausage = saucisse ✦
+cow = vache
+poultry = volaille`,
+'Poissons & fruits de mer':`crab = crabe ✦
+lobster = homard ✦
+mussels = moules
+prawns = crevettes ✦
+salmon = saumon ✦
+squid = calamar ✦
+tuna = thon ✦
+seafood = fruits de mer ✦
+fish = poisson ✦
+shell = coquillage`,
+'Produits & plats':`rice = riz ✦
+pasta = pâtes ✦
+noodle = nouilles ✦
+pizza = pizza ✦
+cheese = fromage ✦
+bread = pain (indénombrable)
+a loaf of bread = un « carré » de pain
+a slice of bread = une tranche de pain
+butter = beurre ✦
+honey = miel
+cream = crème fraîche
+raw milk = lait battu
+dairy products = produits laitiers
+French fries = frites ✦
+chips = chips ✦
+popcorn = pop-corn ✦
+ice cream = glace ✦
+candy = bonbon ✦
+chocolate = chocolat ✦
+white, milk and dark chocolate = chocolat blanc, au lait et noir
+chocolate spread = pâte à tartiner
+spread = tartiner
+marmalade = marmelade
+jam = confiture ✦
+cereals = céréales
+cornflakes = céréales
+oat = avoine (indénombrable)
+pastry = pâtisserie
+toast = toast
+toaster = grille-pain ✦
+tortilla = tortilla ✦
+snack = goûter
+plain = nature (sans goût spécifique)
+topping = garniture
+filling = garniture, fourrage ✦
+to fill = remplir ✦
+ready-made food = plat préparé
+takeaway food = plat à emporter
+homemade food = fait maison
+dish = plat
+starter = entrée
+main dish = plat principal
+dessert = dessert
+flavour = goût, saveur
+taste = goût
+whole = complet`,
+'Boissons':`milk = lait ✦
+tea = thé ✦
+coffee = café ✦
+water = eau ✦
+juice = jus ✦
+sparkling = pétillant ✦
+still = plat (non gazeux) ✦
+fizzy drinks = boissons gazeuses ✦
+Coca-Cola = Coca-Cola ✦
+soda = soda ✦
+wine = vin ;; an alcoholic drink made from grapes
+Burgundy = bordeaux (couleur) ✦`,
+'Contenants':`bottle = bouteille
+box = boîte
+packet = paquet
+bowl = bol
+a can = canette
+tin = conserve
+jar = bocal ✦
+carton of milk = brique de lait
+cardboard = carton (la matière)
+bucket = seau ✦`,
+'Cuisson & cuisine':`to bake / baked = cuire au four ✦
+to boil / boiled = bouillir
+to fry / fried = frire ✦
+to grill / grilled = griller
+to steam / steamed = cuire à la vapeur
+to roast = cuire au four (rôtir)
+to chop = hacher, couper ✦
+to dice = couper en cubes
+oven = four
+hob = plaque de cuisson
+cooker = cuisinière
+microwave = micro-ondes
+fresh = frais
+frozen = surgelé ✦
+low-fat = faiblement gras
+raw = cru
+hot / spicy = piquant
+tinned = en conserve
+to peel = éplucher
+to take up = commencer (une activité)
+to cut down on = diminuer
+to cut out = arrêter
+to eat out = manger dehors
+luckily = heureusement
+fortunately = heureusement
+unfortunately = malheureusement`,
+'Eat and drink':`to disrupt = perturber ;; changing something in a bad way
+natural cycle = cycle naturel ;; the normal rhythm of the body
+vice versa = inversement ;; the opposite is also true
+healthier = plus sain ;; better for your health
+researcher = chercheur ;; people who study and discover information
+blood sugar level = taux de sucre ;; the amount of sugar in the blood
+to skip = sauter (ne pas faire) ;; to not do something
+to suggest = suggérer ;; to give an idea
+regular = régulier ;; happening often and in the same way
+teenagers = adolescents ;; young people
+at risk = à risque ;; in danger of having problems
+heart disease = maladie cardiaque ;; when your heart is sick
+cortisol = cortisol ;; a hormone linked to stress
+alert = éveillé ;; awake and able to concentrate
+alert (adj) = vif, qui réfléchit rapidement
+according to = selon ;; based on what someone said
+carried out = réalisé ;; done or conducted
+digests = digère ;; breaks down food in the body
+stomach = estomac ;; the organ that helps digest food
+glucose = glucose ;; a type of sugar used by the body for energy
+efficient = efficace ;; working well without wasting energy or time
+dealing = gérer ;; managing or handling something
+daylight = lumière du jour ;; natural light from the sun
+melatonin = mélatonine ;; a hormone that helps control sleep
+endurance = endurance ;; ability to continue physical activity for a long time
+capacity = capacité ;; the maximum amount something can contain
+to be allergic to = être allergique à
+to cheer up = réconforter
+to miss sth / sb = manquer
+teenager = adolescent
+teen = adolescent
+to be less likely to = avoir moins de chances de
+diseases = maladie
+illness = maladie
+to be able to = être capable de
+whereas = tandis que
+blood = sang
+should + inf = devrais
+sense of smell and taste = odorat et goût ✦
+at their best = au meilleur (de leur forme)
+delicious = délicieux
+tasty = délicieux, savoureux
+disgusting = dégueulasse
+to walk the dog = promener son chien
+the goal = objectif
+the purpose = objectif
+the aim = objectif`,
+'Corps & santé':`heart = cœur
+muscle = muscle
+lung = poumon
+stomach = estomac
+liver = foie ✦
+kidney = rein
+brain = cerveau
+to breathe = respirer
+breath = respiration
+healthy = bon pour la santé
+unhealthy = mauvais pour la santé
+health = santé
+a bicycle = un vélo
+a bike = un vélo
+an experiment = expérience (labo)
+an experience = expérience (de vie)
+to suit = aller (ça te va bien)
+to fit = aller (ça te va bien, taille)
+to carry out = faire une étude
+thanks to = grâce à
+due to = à cause de
+tense = temps (grammatical)
+a habit = habitude
+even number = nombre pair ✦
+odd number = nombre impair ✦
+rather than = plutôt que ✦
+instead of = au lieu de ✦
+behaviour = comportement ✦
+childish = immature
+to give up = arrêter`,
+'Courses & restaurant':`to order = commander
+a waiter = serveur
+sleepy = somnolent ✦
+hungry = faim
+thirsty = soif
+a bill = l'addition / facture
+a receipt = ticket de caisse
+a diet = régime alimentaire
+to lose weight = perdre du poids
+to gain weight = gagner du poids
+a trick = astuce
+a customer = client (qui achète qqch de physique)
+aisle = allée (de magasin) ✦
+shelf = rayon, étagère ✦
+such as = par exemple
+sales = soldes
+discount = réduction
+gift = cadeau
+present = cadeau
+sample = échantillon
+advertisement = publicité
+cashback = cashback
+to refund = rembourser
+every other day = un jour sur deux
+more or less = plus ou moins
+checkout = caisse
+a cashier = caissier
+a trolley = chariot
+do the groceries = faire les courses
+out of = sur (1 sur 5)
+average = moyenne
+narrow = étroit
+a purchase = achat
+good (nom) = un bien
+pricey = cher (prix)
+to stock = stocker
+an attic = grenier ✦
+to tempt = tenter
+to stand for = représenter ✦
+whiff = bouffée d'odeur ✦
+olfactory = olfactif
+trigger = provoquer
+maze = labyrinthe
+on purpose = intentionnellement
+spread out = étalé ✦
+remote = éloigné / loin
+to stick to = respecter
+avoid = éviter (ne fais pas…)
+to go against = s'opposer
+throw away = jeté
+even though = même si
+edible = comestible
+to get on well with sb = avoir une bonne relation avec…
+to grow = pousser, grandir ✦
+to grow up = grandir (mentalité)
+soil = terre
+to earn money = gagner (travail)
+to win money = gagner (loto)
+useless = inutile
+useful = utile
+to break down = tomber en panne
+an engine = le moteur`,
+'Gaspillage':`issue = problème
+to go off = se périmer ✦
+meal planning = planning de repas
+excess food = surplus de nourriture ✦
+food banks = banques alimentaires
+to have difficulty = avoir des difficultés
+own = propre à moi
+to waste = gaspiller
+waste = gaspillage
+leftovers = restes
+to rot = se décomposer
+to bury = enterrer ✦
+a landfill site = une décharge ✦`
+}},
+
+{id:'1B',name:'Unit 1B',cats:{
+'Famille':`colloquial language = langage familier
+bachelor = homme non marié
+spouse = époux(se)
+bride = la mariée
+groom = le marié
+miss = mademoiselle (non mariée) ✦
+Mrs = madame (mariée) ✦
+great-grandparents = arrière-grands-parents
+close family = famille proche ✦
+extended family = famille élargie ✦
+kin = famille, proches ✦
+single-parent family = famille monoparentale ✦
+adoptive parents = parents adoptifs
+biological = biologique
+pregnant = enceinte
+to expect a baby = attendre un bébé
+to give birth = donner naissance
+to have custody of = avoir la garde de
+to breastfeed = allaiter
+birth rate = taux de naissance
+household = ménage (famille)
+housework = ménage
+chores = tâches ménagères
+to do the dishes = faire la vaisselle ✦
+to do the washing up = faire la vaisselle ✦
+to do the washing = faire la lessive ✦
+to pick sb up = aller chercher qqn ✦
+to drop sb off = déposer qqn ✦
+stuff = affaires ✦
+belongings = affaires ✦
+close-knit = très uni ✦
+to be spoilt = être gâté ✦`,
+'Expressions & mots utiles':`a survey = recherche, enquête
+a study = étude
+surprising = inattendu
+not expected = inattendu
+on average = en moyenne
+to depend on = dépend de
+language in common = langue en commun
+a row = dispute
+an argument = dispute
+to argue = se disputer
+to educate = éduquer (à l'école)
+to raise = éduquer (à la maison)
+to bring up = éduquer (à la maison)
+education = éducation (école)
+upbringing = éducation (maison)
+sensitive topic = sujet sensible
+touchy = sensible
+I'd rather not talk about it = je préférerais ne pas en parler
+Milky Way = Voie lactée
+evidence = preuve
+proof = preuve
+obvious = évident ✦
+to carry = porter
+to wear = porter
+to lend = prêter
+to borrow = emprunter
+the weather forecast = prévision météo
+to land = atterrir
+to take off = décoller`,
+'Caractère':`selfish = égoïste ✦
+unselfish = généreux ✦
+spoilt = gâté ✦
+mature = mature ✦
+immature = immature
+honest = honnête ✦
+dishonest = malhonnête ✦
+charming = charmant ✦
+sensible = raisonnable ✦ ;; faux ami : ≠ sensible en français
+sensitive = sensible ✦
+insensitive = insensible ✦
+sociable = sociable ✦
+unsociable = peu sociable ✦
+unfriendly = peu amical ✦
+anxious = anxieux ✦
+imaginative = imaginatif ✦
+unimaginative = sans imagination ✦
+independent = indépendant ✦
+bossy = autoritaire ✦
+insecure = peu sûr de soi ✦
+stubborn = têtu ✦
+patient = patient ✦
+ambitious = ambitieux ✦
+reliable = fiable ✦
+unreliable = peu fiable ✦
+self-confident = sûr de soi ✦
+rebellious = rebelle ✦
+moody = lunatique ✦
+competitive = compétitif ✦
+affectionate = affectueux ✦
+unkind = méchant ✦
+disorganised = désorganisé ✦
+untidy = désordonné ✦
+irresponsible = irresponsable ✦`
+}},
+
+{id:'ID',name:'Idioms',cats:{
+'Expressions idiomatiques':`to beat around the bush = tourner autour du pot ;; to avoid talking about what is important
+to walk on eggshells = marcher sur des œufs ;; to be very careful not to offend or upset sb
+when pigs fly = quand les poules auront des dents ;; there is no chance of something happening
+to be in hot water = être dans de beaux draps / dans le pétrin ;; to go in trouble
+to go bananas = péter un câble ;; to lose control of your emotions and become very angry
+to have bigger fish to fry = avoir d'autres chats à fouetter ;; to have more important things to do
+a hard nut to crack = un casse-tête ✦ ;; something or someone that is difficult to understand or solve
+to spill the beans = vendre la mèche ;; to tell people information that was supposed to be secret
+to be as cool as a cucumber = garder son sang-froid ✦ ;; to stay calm, even in a difficult or stressful situation`
+}},
+
+{id:'DV',name:'Divers',cats:{
+'Début de cahier':`shoe size = pointure
+Burgundy = bordeaux (couleur)
+date of birth = date de naissance
+to pass = réussir
+to fail = rater
+to take (an exam) = passer / prendre
+puppy = petit chiot
+windmill = moulin à vent
+a fly = une mouche
+a mosquito = un moustique
+to happen = se passer
+to take place = se passer
+to tan = bronzer
+to sunbathe = bronzer
+to believe = penser
+to think = penser
+a shelf (shelves) = l'étagère
+blinds = store (rideau horizontal) ✦
+mussel = moules
+shell = coquillage
+riddle = énigme
+spicy = chaud / piquant
+hot = chaud
+careful = prudent
+bucket = seau
+wings = ailes
+to spit out (spit – spat) = cracher
+hinge = charnière
+lock = serrure
+sheep = mouton
+cheap = bon marché ✦
+explanation = explication`
+}}
+];
+
+const words=[];
+RAW.forEach(u=>Object.entries(u.cats).forEach(([c,txt])=>txt.trim().split('\n').forEach(l=>{
+  let fl=false,df='';
+  if(l.includes(' ;; ')){[l,df]=l.split(' ;; ');}
+  l=l.trim(); if(l.endsWith('✦')){fl=true;l=l.slice(0,-1).trim()}
+  if(df.trim().endsWith('✦')){fl=true;df=df.trim().slice(0,-1)}
+  const i=l.indexOf(' = '); const en=l.slice(0,i).trim(), fr=l.slice(i+3).trim();
+  words.push({en,fr,fl,df:df.trim(),u:u.id,c,k:u.id+'|'+en+'|'+fr});
+})));
+
+/* ---------- ÉTAT ---------- */
+let S={unit:'all',cat:'all',mode:'learn',dir:'en',hide:false,theme:'nuit',known:{}};
+try{const s=JSON.parse(localStorage.getItem('vocab-en')||'{}');S={...S,...s}}catch(e){}
+S.lvl=S.lvl||{};
+const save=()=>{try{localStorage.setItem('vocab-en',JSON.stringify({theme:S.theme,known:S.known,dir:S.dir,mode:S.mode,unit:S.unit,cat:S.cat,hide:S.hide,lvl:S.lvl,rc:S.rc,nx:S.nx,gp:S.gp,goal:S.goal}))}catch(e){}};
+let deck=[],idx=0,flipped=false,quiz=null,search='';
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const say=t=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';speechSynthesis.speak(u)}catch(e){}};
+
+function pool(){
+  return words.filter(w=>(S.unit==='all'||w.u===S.unit)&&(S.cat==='all'||w.c===S.cat)&&(!S.hide||S.mode==='learn'||!S.known[w.k])&&(!search||(w.en+' '+w.fr).toLowerCase().includes(search)));
+}
+function side(w){return S.dir==='mix'?(w._m=(w._m??(Math.random()<.5)),w._m?'en':'fr'):S.dir}
+
+/* ---------- CHROME ---------- */
+const THEMES=['nuit','ocean','foret','aurore','clair'];
+function chrome(){
+  document.documentElement.dataset.theme=S.theme;
+  const n=u=>words.filter(w=>u==='all'||w.u===u).length;
+  $('units').innerHTML=[['all','Tout']].concat(RAW.map(u=>[u.id,u.name])).map(([id,nm])=>`<button class="chip ${S.unit===id?'on':''}" data-u="${id}">${nm}<small>${n(id)}</small></button>`).join('');
+  const cats=[...new Set(words.filter(w=>S.unit==='all'||w.u===S.unit).map(w=>w.c))];
+  if(S.cat!=='all'&&!cats.includes(S.cat))S.cat='all';
+  $('catSel').innerHTML=`<option value="all">Toutes les catégories (${n(S.unit)})</option>`+cats.map(c=>`<option value="${esc(c)}" ${S.cat===c?'selected':''}>${esc(c)} (${words.filter(w=>w.c===c&&(S.unit==='all'||w.u===S.unit)).length})</option>`).join('');
+  $('modes').innerHTML=[['learn','📚','Apprendre'],['cards','🃏','Cartes'],['quiz','🎯','Quiz'],['list','☰','Liste']].map(([m,i,l])=>`<button class="${S.mode===m?'on':''}" data-m="${m}" title="${l}">${i}<span class="lb"> ${l}</span></button>`).join('');
+  $('dirBtn').textContent={en:'EN → FR',fr:'FR → EN',mix:'🔀 Mixte'}[S.dir];
+  $('hideKnown').checked=S.hide;
+  const known=Object.keys(S.known).filter(k=>S.known[k]).length;
+  $('sub').textContent=`${words.length} mots · ${known} sus`;
+  $('shufBtn').classList.toggle('hide',S.mode!=='cards');
+  $('goalBtn').classList.toggle('hide',S.mode!=='learn');$('goalBtn').textContent='🎯 Nouveaux mots par session : '+S.goal;
+}
+
+/* ---------- LISTE ---------- */
+function renderList(){
+  const p=pool(); $('count').textContent=p.length+' mots';
+  let h=`<div class="panel row"><input type="search" id="q" placeholder="🔍 Rechercher…" value="${esc(search)}"></div>`;
+  if(!p.length) h+='<div class="empty">Aucun mot.</div>';
+  const groups={};p.forEach(w=>{(groups[w.u+' · '+w.c]=groups[w.u+' · '+w.c]||[]).push(w)});
+  Object.entries(groups).forEach(([g,ws])=>{
+    h+=`<div class="cat"><h3>${esc(g)} <span>${ws.length}</span></h3>`+ws.map(w=>`<div class="item ${S.known[w.k]?'known':''}"><div class="en">${esc(w.en)}</div><div class="fr">${esc(w.fr)}</div><div><button class="ico" data-say="${esc(w.en)}" title="Écouter">🔊</button><button class="ico" data-k="${esc(w.k)}" title="Marquer su">${S.known[w.k]?'✅':'⬜'}</button></div>${w.df?`<div class="df">${esc(w.df)}</div>`:''}</div>`).join('')+'</div>';
+  });
+  $('view').innerHTML=h;
+  const q=$('q');q.oninput=()=>{search=q.value.toLowerCase();const pos=q.selectionStart;renderList();const n=$('q');n.focus();n.setSelectionRange(pos,pos)};
+}
+
+/* ---------- CARTES ---------- */
+function buildDeck(sh){deck=pool();words.forEach(w=>delete w._m);if(sh)deck=shuffle(deck);idx=0;flipped=false}
+function renderCards(){
+  $('count').textContent=deck.length+' cartes';
+  if(!deck.length){$('view').innerHTML='<div class="empty">Aucune carte 🎉<br>Change de catégorie ou décoche « Masquer les mots sus ».</div>';return}
+  if(idx>=deck.length)idx=deck.length-1; if(idx<0)idx=0;
+  const w=deck[idx],s=side(w),q=s==='en'?w.en:w.fr,a=s==='en'?w.fr:w.en;
+  const df=w.df?`<div class="d">${esc(w.df)}</div>`:'';
+  $('view').innerHTML=`<div class="stage">
+   <div class="prog"><i style="width:${(idx+1)/deck.length*100}%"></i></div>
+   <div class="count">${idx+1} / ${deck.length} · ${esc(w.c)}</div>
+   <div class="scene" id="scene"><div class="flip ${flipped?'f':''}" id="flip">
+     <div class="face front"><span class="tag">${s==='en'?'English':'Français'}</span><button class="ico sp" data-say="${esc(w.en)}">🔊</button><div class="w">${esc(q)}</div><span class="hint">toucher pour retourner</span></div>
+     <div class="face back"><span class="tag">${s==='en'?'Français':'English'}</span><button class="ico sp" data-say="${esc(w.en)}">🔊</button><div class="w">${esc(a)}</div>${df}</div>
+   </div></div>
+   </div>
+   <div class="navbar"><button class="btn" id="prev" aria-label="Précédent">←</button><button class="btn ko" id="rev">À revoir</button><button class="btn ok" id="kn">Je sais</button><button class="btn" id="next" aria-label="Suivant">→</button></div>`;
+  $('scene').onclick=e=>{if(e.target.closest('.ico'))return;flipCard()};
+  $('prev').onclick=()=>go(-1);$('next').onclick=()=>go(1);
+  $('kn').onclick=()=>mark(true);$('rev').onclick=()=>mark(false);
+  let x0=null;const sc=$('scene');
+  sc.ontouchstart=e=>{x0=e.touches[0].clientX};
+  sc.ontouchend=e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>50)go(dx<0?1:-1)};
+}
+function flipCard(){flipped=!flipped;const f=$('flip');if(f)f.classList.toggle('f',flipped)}
+function go(d){if(!deck.length)return;idx=(idx+d+deck.length)%deck.length;flipped=false;renderCards()}
+function mark(ok){if(!deck.length)return;const w=deck[idx];S.known[w.k]=ok;S.lvl[w.k]=ok?2:0;if(ok){S.gp[w.k]=3;S.nx[w.k]=S.rc+2}else{delete S.nx[w.k];delete S.gp[w.k]}save();chrome();
+  if(ok&&S.hide){deck.splice(idx,1);flipped=false;renderCards()}else go(1)}
+
+/* ---------- QUIZ ---------- */
+function startQuiz(){
+  const p=shuffle(pool()).slice(0,15);words.forEach(w=>delete w._m);
+  quiz={q:p,i:0,score:0,done:false,ans:null};renderQuiz();
+}
+function renderQuiz(){
+  const all=pool();$('count').textContent=Math.min(15,all.length)+' questions';
+  if(all.length<2){$('view').innerHTML='<div class="empty">Il faut au moins 2 mots pour le quiz.</div>';return}
+  if(!quiz||quiz.q.length!==Math.min(15,all.length)&&quiz.i===0)startQuizSilent();
+  if(quiz.i>=quiz.q.length){
+    $('view').innerHTML=`<div class="q panel"><div class="lbl">Résultat</div><div class="score">${quiz.score} / ${quiz.q.length}</div><p class="sub" style="margin:10px 0 18px">${quiz.score===quiz.q.length?'Parfait ! 🏆':quiz.score>=quiz.q.length*.7?'Bien joué 👏':'Encore un tour ? 💪'}</p><button class="btn main" id="again">Rejouer</button></div>`;
+    $('again').onclick=startQuiz;return}
+  const w=quiz.q[quiz.i],s=side(w),q=s==='en'?w.en:w.fr,a=s==='en'?w.fr:w.en;
+  if(!quiz.opts||quiz.optsFor!==quiz.i){
+    const others=shuffle(words.filter(x=>x!==w&&(s==='en'?x.fr:x.en)!==a));
+    const d=[];for(const x of others){const t=s==='en'?x.fr:x.en;if(!d.includes(t))d.push(t);if(d.length===3)break}
+    quiz.opts=shuffle([a,...d]);quiz.optsFor=quiz.i;quiz.ans=null}
+  $('view').innerHTML=`<div class="q"><div class="prog"><i style="width:${quiz.i/quiz.q.length*100}%"></i></div>
+   <div class="count" style="margin-top:10px">Question ${quiz.i+1} / ${quiz.q.length} · score ${quiz.score}</div>
+   <div class="qt">${esc(q)} <button class="ico" data-say="${esc(w.en)}">🔊</button></div>
+   <div class="opts">${quiz.opts.map(o=>`<button class="opt ${quiz.ans!==null?(o===a?'good':(o===quiz.ans?'bad':'')):''}" ${quiz.ans!==null?'disabled':''} data-o="${esc(o)}">${esc(o)}</button>`).join('')}</div>
+   ${quiz.ans!==null?`<button class="btn main" id="nx" style="margin-top:18px">${quiz.i+1===quiz.q.length?'Voir le score':'Suivant →'}</button>`:''}</div>`;
+  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(quiz.ans!==null)return;quiz.ans=b.dataset.o;if(quiz.ans===a){quiz.score++}else{S.known[w.k]=false;S.lvl[w.k]=0;save()}renderQuiz()});
+  const nx=$('nx');if(nx)nx.onclick=()=>{quiz.i++;quiz.opts=null;renderQuiz()};
+}
+function startQuizSilent(){const p=shuffle(pool()).slice(0,15);quiz={q:p,i:0,score:0,ans:null}}
+
+/* ---------- APPRENDRE (comme Quizlet) ---------- */
+let L=null,SS={new:0,revDone:false};
+S.rc=S.rc||0;S.nx=S.nx||{};S.gp=S.gp||{};S.goal=S.goal||20;
+const lv=w=>S.lvl[w.k]||0;
+const strip=t=>t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/œ/g,'oe').replace(/[’']/g,' ').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
+const lead=/^(to|a|an|the|le|la|les|l|un|une|des|se|s|d|de)\s+/;
+const base=t=>{let r=strip(t),p;do{p=r;r=r.replace(lead,'')}while(r!==p&&r.length>2);return r};
+function cands(ans){const o=new Set();const raw=ans.replace(/\s*\([^)]*\)/g,'');
+  ans.split(/\s*(?:\/|,|;)\s*/).concat(raw.split(/\s*(?:\/|,|;)\s*/),[ans,raw]).forEach(p=>{const b=base(p),f=strip(p);if(b)o.add(b);if(f)o.add(f)});return [...o]}
+function lev(a,b){const m=[...Array(a.length+1)].map((_,i)=>[i]);for(let j=1;j<=b.length;j++)m[0][j]=j;
+  for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return m[a.length][b.length]}
+function check(inp,ans){const a=base(inp),b=strip(inp);if(!a)return 'no';const c=cands(ans);
+  if(c.includes(a)||c.includes(b))return 'ok';
+  if(a.length>=5&&c.some(d=>d.length>=5&&lev(a,d)<=1))return 'close';return 'no'}
+
+function lrnStart(){
+  const p=pool();words.forEach(w=>delete w._m);
+  S.rc++;
+  const un=p.filter(w=>S.lvl[w.k]===undefined);
+  const missed=shuffle(p.filter(w=>S.lvl[w.k]===0));
+  const fam=shuffle(p.filter(w=>S.lvl[w.k]===1));
+  const due=p.filter(w=>lv(w)>=2&&(S.nx[w.k]||0)<=S.rc).sort((a,b)=>(S.nx[a.k]||0)-(S.nx[b.k]||0));
+  const canNew=SS.new<S.goal&&un.length>0;
+  let others=[...missed.slice(0,3),...fam.slice(0,2),...due.slice(0,2)];
+  if(canNew)others=others.slice(0,4);
+  const rest=[...missed.slice(3),...fam.slice(2)].filter(w=>!others.includes(w));
+  while(others.length<7&&rest.length&&!(canNew&&others.length>=4))others.push(rest.shift());
+  const nn=canNew?Math.min(un.length,7-others.length,S.goal-SS.new):0;
+  const nw=un.slice(0,nn);SS.new+=nn;
+  const kind=w=>S.lvl[w.k]===undefined?'new':S.lvl[w.k]===0?'miss':S.lvl[w.k]===1?'fam':'rev';
+  let pick=shuffle([...others,...nw]);
+  if(!pick.length||pick.every(w=>kind(w)==='rev')){
+    if(SS.revDone)pick=[];
+    else{const m=p.filter(w=>lv(w)>=2).sort((a,b)=>(S.nx[a.k]||0)-(S.nx[b.k]||0)).slice(0,7);if(m.length){pick=shuffle(m);SS.revDone=true}}
+  }
+  L={q:pick.map(w=>{const k=kind(w);return{w,step:(k==='fam'||k==='rev')?1:0,rev:k==='rev'}}),n:pick.length,fb:null,good:0,bad:0,log:{}};
+  pick.forEach(w=>L.log[w.k]={w,miss:false,rev:kind(w)==='rev'});
+  if(!pick.length)S.rc--;
+  save();
+}
+const ansOf=w=>side(w)==='en'?w.fr:w.en, qOf=w=>side(w)==='en'?w.en:w.fr;
+function mkOpts(cur){const w=cur.w,a=ansOf(w),get=x=>side(w)==='en'?x.fr:x.en;
+  const o=shuffle(words.filter(x=>x!==w&&get(x)!==a));o.sort((x,y)=>(y.c===w.c)-(x.c===w.c));
+  const d=[];for(const x of o){const t=get(x);if(!d.includes(t))d.push(t);if(d.length===3)break}
+  cur.opts=shuffle([a,...d])}
+function lrnApply(ok){
+  const cur=L.q[0],w=cur.w,k=w.k;
+  if(ok){L.good++;
+    if(cur.step===0){S.lvl[k]=Math.max(S.lvl[k]||0,1);cur.step=1;L.q.push(L.q.shift())}
+    else if(cur.rev){const g=Math.min(40,(S.gp[k]||3)*2);S.gp[k]=g;S.nx[k]=S.rc+g;S.known[k]=true;L.q.shift()}
+    else{S.lvl[k]=2;S.known[k]=true;S.gp[k]=3;S.nx[k]=S.rc+3;L.q.shift()}
+  }else{L.bad++;L.log[k].miss=true;S.lvl[k]=0;S.known[k]=false;delete S.gp[k];delete S.nx[k];
+    cur.step=0;cur.rev=false;cur.opts=null;const it=L.q.shift();L.q.splice(Math.min(2,L.q.length),0,it)}
+  save();chrome();
+}
+function lrnNext(){L.fb=null;if(S.mode==='learn')renderLearn()}
+function lrnSubmit(given){
+  if(!L||L.fb)return;const cur=L.q[0],w=cur.w,a=ansOf(w);
+  let res=cur.step===0?(given===a?'ok':'no'):check(given,a);
+  const fb={res,given,a,q:qOf(w),typed:cur.step===1,rev:cur.rev};
+  if(res==='no'){fb.pending=true;L.fb=fb}
+  else{lrnApply(true);L.fb=fb;setTimeout(()=>{if(L&&L.fb===fb)lrnNext()},res==='close'?1800:750)}
+  renderLearn();
+}
+function renderLearn(){
+  const p=pool();$('count').textContent=p.length+' mots';
+  if(!p.length){$('view').innerHTML='<div class="empty">Aucun mot.</div>';return}
+  if(!L)lrnStart();
+  const nu=p.filter(w=>S.lvl[w.k]===undefined).length,nm=p.filter(w=>S.lvl[w.k]===0).length,n1=p.filter(w=>S.lvl[w.k]===1).length,n2=p.filter(w=>lv(w)>=2).length;
+  const nd=p.filter(w=>lv(w)>=2&&(S.nx[w.k]||0)<=S.rc+1).length;
+  const stats=`<div class="lstats"><div class="lbar"><i style="width:${n2/p.length*100}%;background:#16a34a"></i><i style="width:${n1/p.length*100}%;background:#f59e0b"></i><i style="width:${nm/p.length*100}%;background:#e11d48"></i></div><div class="lleg"><span>⚪ ${nu} nouveaux</span><span>🔴 ${nm} ratés</span><span>🟠 ${n1} en cours</span><span>✅ ${n2} appris</span></div><div class="lleg" style="margin-top:2px"><span>Session : ${Math.min(SS.new,S.goal)} / ${S.goal} nouveaux mots</span></div></div>`;
+  const box=h=>{$('view').innerHTML=`<div class="q">${stats}${h}</div>`};
+  if(L.fb){
+    const f=L.fb,bad=f.res==='no';
+    box(`<div class="fb ${bad?'bad':'good'}"><div class="lbl">${esc(f.q)}${f.rev?' · révision':''}</div>
+      <div class="fbt">${bad?(f.given?'❌ Pas tout à fait':'❌ La réponse était'):f.res==='close'?'👍 Presque !':'✅ Bravo !'}</div>
+      ${bad&&f.given?`<div class="sub">Ta réponse : <b>${esc(f.given)}</b></div>`:''}
+      <div class="fba">${esc(f.a)}</div>
+      ${bad?`<div class="sub" style="margin-top:10px">Ce mot reviendra dans quelques questions.</div><div class="row" style="justify-content:center;margin-top:12px"><button class="btn main" id="lc">Continuer</button>${f.typed&&f.given?'<button class="btn" id="lj">J\'avais juste</button>':''}</div>`:''}</div>`);
+    if(bad){$('lc').onclick=()=>{lrnApply(false);lrnNext()};const j=$('lj');if(j)j.onclick=()=>{lrnApply(true);lrnNext()}}
+    return}
+  if(!L.q.length){
+    if(!L.n){
+      const more=nu>0;
+      box(`<div class="panel" style="text-align:center"><div class="score">🎉</div><p class="fbt" style="margin:10px 0 6px">${more?'Session terminée !':'Tout est vu et appris !'}</p><p class="sub" style="margin-bottom:16px">${more?'Les mots appris reviendront en révision, de temps en temps.':'Les mots appris reviendront en révision dans les prochains tours.'}</p>
+      ${more?`<button class="btn main" id="lr">Nouvelle session (+${S.goal} mots)</button>`:`<button class="btn" id="lr">Recommencer à zéro</button>`}</div>`);
+      $('lr').onclick=()=>{if(more){SS.new=0}else{p.forEach(w=>{delete S.lvl[w.k];delete S.nx[w.k];delete S.gp[w.k];S.known[w.k]=false});SS.new=0}save();L=null;renderLearn();chrome()};return}
+    const items=Object.values(L.log);
+    box(`<div class="panel" style="text-align:center"><div class="lbl">Tour terminé</div><div class="score">${items.filter(i=>!i.miss).length} / ${items.length}</div>
+      <div style="text-align:left;margin:14px 0">${items.map(i=>`<div class="item" style="display:flex;gap:10px;align-items:baseline;padding:8px 12px"><span>${i.miss?'❌':'✅'}</span><b style="flex:1">${esc(i.w.en)}</b><span class="fr" style="flex:1;text-align:right;font-size:13px">${esc(i.w.fr)}</span></div>`).join('')}</div>
+      <button class="btn main" id="ln">Tour suivant</button></div>`);
+    $('ln').onclick=()=>{L=null;renderLearn()};return}
+  const cur=L.q[0],w=cur.w,done=L.n-L.q.length;
+  const prog=`<div class="prog" style="max-width:none;margin:14px 0 4px"><i style="width:${done/L.n*100}%"></i></div><div class="count" style="text-align:center">${done+1} / ${L.n}${cur.rev?' · révision 🔁':''}</div>`;
+  if(cur.step===0){
+    if(!cur.opts)mkOpts(cur);
+    box(`${prog}<div class="qt">${esc(qOf(w))} <button class="ico" data-say="${esc(w.en)}">🔊</button></div><div class="lbl" style="text-align:center">Choisis la bonne réponse</div>
+      <div class="opts">${cur.opts.map((o,i)=>`<button class="opt" data-lo="${i}"><span class="kn">${i+1}</span> ${esc(o)}</button>`).join('')}</div>
+      <div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="lk">Je ne sais pas</button></div>`);
+    document.querySelectorAll('[data-lo]').forEach(b=>b.onclick=()=>lrnSubmit(cur.opts[+b.dataset.lo]));
+    $('lk').onclick=()=>lrnSubmit('');
+  }else{
+    box(`${prog}<div class="qt">${esc(qOf(w))} <button class="ico" data-say="${esc(w.en)}">🔊</button></div><div class="lbl" style="text-align:center">Écris la traduction ${side(w)==='en'?'en français':'en anglais'}</div>
+      <form id="lf" class="row" style="justify-content:center;flex-wrap:nowrap"><input id="la" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Ta réponse…"><button class="btn main" type="submit">Valider</button></form>
+      <div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="lk">Je ne sais pas</button></div>`);
+    $('lf').onsubmit=e=>{e.preventDefault();lrnSubmit($('la').value.trim()||'')};
+    $('lk').onclick=()=>lrnSubmit('');
+    setTimeout(()=>{const i=$('la');if(i)i.focus()},50);
+  }
+}
+
+/* ---------- RENDU GLOBAL ---------- */
+function render(){
+  chrome();
+  if(S.mode==='list')renderList();
+  else if(S.mode==='cards'){if(!deck.length||deck.some(w=>!pool().includes(w))&&!S.hide)buildDeck(false);renderCards()}
+  else if(S.mode==='learn')renderLearn();
+  else renderQuiz();
+}
+function reset(){deck=[];quiz=null;L=null;SS.new=0;SS.revDone=false;if(S.mode==='cards')buildDeck(false);if(S.mode==='quiz')startQuizSilent();render()}
+
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-u],[data-m],[data-say],[data-k]');if(!e.target.closest('.menuwrap'))$('menu').classList.add('hide');if(!t)return;
+  if(t.dataset.u){S.unit=t.dataset.u;S.cat='all';save();reset()}
+  else if(t.dataset.m){S.mode=t.dataset.m;save();reset()}
+  else if(t.dataset.say){say(t.dataset.say)}
+  else if(t.dataset.k){S.known[t.dataset.k]=!S.known[t.dataset.k];save();render()}
+});
+$('catSel').onchange=e=>{S.cat=e.target.value;save();reset()};
+$('dirBtn').onclick=()=>{S.dir={en:'fr',fr:'mix',mix:'en'}[S.dir];save();reset()};
+$('themeBtn').onclick=()=>{S.theme=THEMES[(THEMES.indexOf(S.theme)+1)%THEMES.length];save();chrome()};
+$('goalBtn').onclick=()=>{const g=[10,20,30,50];S.goal=g[(g.indexOf(S.goal)+1)%g.length];save();chrome();if(S.mode==='learn'){L=null;renderLearn()}};
+$('moreBtn').onclick=()=>$('menu').classList.toggle('hide');
+$('shufBtn').onclick=()=>{$('menu').classList.add('hide');buildDeck(true);renderCards()};
+$('rstBtn').onclick=()=>{S.known={};S.lvl={};S.nx={};S.gp={};S.rc=0;SS.new=0;SS.revDone=false;save();$('menu').classList.add('hide');reset()};
+$('hideKnown').onchange=e=>{S.hide=e.target.checked;save();reset()};
+document.addEventListener('keydown',e=>{
+  if(S.mode==='learn'&&L){
+    if(L.fb&&L.fb.pending&&(e.key==='Enter'||e.key===' ')){e.preventDefault();lrnApply(false);lrnNext();return}
+    if(!L.fb&&L.q.length&&L.q[0].step===0&&/^[1-4]$/.test(e.key)){const o=L.q[0].opts[+e.key-1];if(o)lrnSubmit(o)}
+    return}
+  if(S.mode!=='cards'||e.target.tagName==='INPUT')return;
+  if(e.key===' '||e.key==='Enter'){e.preventDefault();flipCard()}
+  else if(e.key==='ArrowRight')go(1);else if(e.key==='ArrowLeft')go(-1);
+  else if(e.key==='ArrowUp'){e.preventDefault();mark(true)}else if(e.key==='ArrowDown'){e.preventDefault();mark(false)}
+});
+function dl(name,type,txt){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type}));a.download=name;document.body.appendChild(a);a.click();a.remove()}
+$('dlcsv').onclick=()=>{const q=v=>'"'+String(v).replace(/"/g,'""')+'"';
+  dl('vocabulaire-anglais.csv','text/csv;charset=utf-8','\ufeffUnit;Catégorie;Anglais;Français\n'+pool().map(w=>[w.u,w.c,w.en,w.fr].map(q).join(';')).join('\n'))};
+/*PDFSTART*/
+function mkPdf(groups){
+  const W=595,H=842,M=40,pages=[];let c=[],y=H-M-26;
+  const map={'œ':0x9c,'Œ':0x8c,'’':0x92,'‘':0x91,'…':0x85,'–':0x96,'—':0x97,'«':0xab,'»':0xbb,'“':0x93,'”':0x94};
+  const enc=t=>[...t].map(ch=>{let n=map[ch]??ch.charCodeAt(0);if(n>255)n=63;const q=String.fromCharCode(n);return q==='('||q===')'||q==='\\'?'\\'+q:q}).join('');
+  const txt=(x,yy,t,f,sz,col)=>c.push(`BT /${f} ${sz} Tf ${col} rg ${x} ${yy} Td (${enc(t)}) Tj ET`);
+  const rect=(x,yy,w,h,col)=>c.push(`${col} rg ${x} ${yy} ${w} ${h} re f`);
+  const wrap=(t,n)=>{const o=[];let l='';t.split(' ').forEach(w=>{if((l+' '+w).trim().length>n&&l){o.push(l);l=w}else l=(l+' '+w).trim()});if(l)o.push(l);return o};
+  const P='0.43 0.16 0.85';
+  const head=()=>{txt(M,H-M-14,"Vocabulaire d'anglais",'F2',20,P)};
+  const np=()=>{pages.push(c.join('\n'));c=[];y=H-M};
+  head();
+  groups.forEach(([title,ws])=>{
+    if(y<M+70)np();
+    y-=10;rect(M,y-4,5,16,P);txt(M+12,y,title,'F2',12,P);y-=20;
+    ws.forEach((w,i)=>{
+      const L=wrap(w.en,44),R=wrap(w.fr,52),D=w.df?wrap(w.df,64):[];
+      const h=Math.max(L.length,R.length+D.length)*11+7;
+      if(y-h<M+10)np();
+      if(i%2===0)rect(M,y-h+9,W-2*M,h,'0.95 0.94 1');
+      L.forEach((l,k)=>txt(M+6,y-k*11,l,'F2',9,'0.1 0.1 0.15'));
+      R.forEach((l,k)=>txt(290,y-k*11,l,'F1',9,'0.15 0.15 0.2'));
+      D.forEach((l,k)=>txt(290,y-(R.length+k)*11,l,'F1',7.5,'0.45 0.45 0.55'));
+      y-=h;
+    });
+  });
+  np();
+  pages.forEach((p,i)=>{pages[i]=p+`\nBT /F1 8 Tf 0.45 0.45 0.55 rg ${W/2-30} 20 Td (Page ${i+1} / ${pages.length}) Tj ET`});
+  const objs=['<< /Type /Catalog /Pages 2 0 R >>',`<< /Type /Pages /Kids [${pages.map((_,i)=>(5+2*i)+' 0 R').join(' ')}] /Count ${pages.length} >>`,
+   '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>','<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>'];
+  pages.forEach((p,i)=>{objs.push(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${W} ${H}] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents ${6+2*i} 0 R >>`);objs.push(`<< /Length ${p.length} >>\nstream\n${p}\nendstream`)});
+  let out='%PDF-1.4\n';const off=[];
+  objs.forEach((o,i)=>{off.push(out.length);out+=`${i+1} 0 obj\n${o}\nendobj\n`});
+  const x=out.length;out+=`xref\n0 ${objs.length+1}\n0000000000 65535 f \n`+off.map(o=>String(o).padStart(10,'0')+' 00000 n \n').join('')+`trailer\n<< /Size ${objs.length+1} /Root 1 0 R >>\nstartxref\n${x}\n%%EOF`;
+  const u=new Uint8Array(out.length);for(let i=0;i<out.length;i++)u[i]=out.charCodeAt(i)&255;return u;
+}
+/*PDFEND*/
+$('dlpdf').onclick=()=>{const g={};pool().forEach(w=>(g[w.u+' · '+w.c]=g[w.u+' · '+w.c]||[]).push(w));
+  const u=mkPdf(Object.entries(g));const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([u],{type:'application/pdf'}));a.download='vocabulaire-anglais.pdf';document.body.appendChild(a);a.click();a.remove()};
+S.rc+=2;save();
+reset();
+</script>
+</body>
+</html>
