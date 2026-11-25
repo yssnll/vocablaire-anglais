@@ -130,13 +130,45 @@ input[type=search]:focus{border-color:var(--a)}
 @media print{body>.wrap{display:none!important}body{background:#fff!important}#printArea{display:block;color:#111;font-family:Arial,sans-serif;font-size:11pt}
 #printArea h1{font-size:20pt;color:#6d28d9;background:none;-webkit-text-fill-color:#6d28d9}#printArea h3{margin:14pt 0 4pt;color:#6d28d9;font-size:12pt}
 #printArea table{width:100%;border-collapse:collapse;page-break-inside:auto}#printArea td{padding:3pt 6pt;border-bottom:1px solid #ddd;vertical-align:top}#printArea tr{page-break-inside:avoid}#printArea td:first-child{font-weight:bold;width:45%}#printArea small{color:#777;font-style:italic;display:block}}
+
+/* ===== v5 : interface épurée ===== */
+.bar{margin-bottom:10px;gap:8px}
+.bar h1{font-size:clamp(18px,4.5vw,24px)}
+.scope{display:inline-flex;align-items:center;gap:6px;max-width:48vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--card2);color:var(--txt);font-weight:700;font-size:13px;font-family:inherit;cursor:pointer}
+.scope:hover{border-color:var(--a)}
+.scope small{color:var(--mut);font-weight:600}
+.tabs{display:flex;gap:4px;padding:4px;margin-bottom:14px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.tabs button{flex:1;border:0;background:transparent;color:var(--mut);padding:10px 6px;border-radius:12px;font-weight:700;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:.2s}
+.tabs button:hover{color:var(--txt)}
+.tabs button.on{background:linear-gradient(135deg,var(--a),var(--b));color:#fff;box-shadow:0 6px 18px -8px var(--a)}
+.sheet{position:fixed;inset:0;z-index:60}
+.sheetbg{position:absolute;inset:0;background:#000a;backdrop-filter:blur(3px)}
+.sheetbox{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(560px,100%);max-height:86vh;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:26px 26px 0 0;padding:18px 18px calc(18px + env(safe-area-inset-bottom));box-shadow:0 -20px 60px -10px #000a;animation:up .25s ease}
+@keyframes up{from{transform:translate(-50%,30px);opacity:0}}
+@media(min-width:700px){.sheetbox{bottom:auto;top:12vh;border-radius:26px}}
+.sheethd{display:flex;justify-content:space-between;align-items:center;font-size:18px;margin-bottom:4px}
+.lbl2{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut);font-weight:700;margin:16px 0 8px}
+.sheetbox .row{gap:6px;flex-wrap:wrap}
+.sheetbox .chip{padding:8px 13px;font-size:13px}
+#sheetOk{width:100%;margin-top:20px;min-height:50px;font-size:16px}
+/* apprendre : stats discrètes */
+.lstats{margin:0 0 4px}
+.lbar{height:6px}
+.lmeta{display:flex;justify-content:space-between;gap:10px;color:var(--mut);font-size:12px;margin-top:7px}
+.lmeta b{color:var(--txt)}
+.q .qt,.q .qw{font-size:clamp(30px,8vw,44px);font-weight:800;margin:26px 0 6px;letter-spacing:-.5px}
+.opt{padding:17px 16px;border-radius:18px;background:var(--card);font-size:16px}
+.opt:hover:not(:disabled){background:var(--card2)}
+@media(max-width:700px){.wrap{padding-left:14px;padding-right:14px}}
+@media(hover:none){.foot{display:none}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="bar">
-  <h1>Vocabulaire d'anglais</h1>
-  <span class="count" id="count"></span>
+  <h1>Vocabulaire</h1>
+  <span class="count" id="count" hidden></span>
+  <button class="scope" id="scopeBtn" aria-label="Choisir quoi étudier"></button>
   <button class="ibtn" id="themeBtn" title="Changer de thème">🎨</button>
   <div class="menuwrap"><button class="ibtn" id="moreBtn" title="Plus">⋯</button>
     <div class="menu hide" id="menu">
@@ -150,16 +182,18 @@ input[type=search]:focus{border-color:var(--a)}
     </div>
   </div>
 </div>
-<div class="bar2">
-  <div class="row" id="units"></div>
-  <select id="catSel" aria-label="Catégorie"></select>
-  <div class="seg" id="modes"></div>
-  <button class="chip" id="dirBtn" title="Changer le sens"></button>
-</div>
+<div class="tabs" id="modes"></div>
 
 <div id="view"></div>
 <div id="printArea"></div>
-<div class="foot">Espace : retourner · ← → : naviguer · ↑ : je sais · ↓ : à revoir</div>
+<div class="foot" id="foot">Espace : retourner · ← → : naviguer · ↑ : je sais · ↓ : à revoir</div>
+<div class="sheet hide" id="sheet"><div class="sheetbg" data-close="1"></div><div class="sheetbox">
+  <div class="sheethd"><b>Que veux-tu étudier ?</b><button class="ibtn" data-close="1" aria-label="Fermer">✕</button></div>
+  <div class="lbl2">Unité</div><div class="row" id="units"></div>
+  <div class="lbl2">Catégorie</div><div class="row" id="cats"></div>
+  <div class="lbl2">Sens</div><div class="seg" id="dirs"></div>
+  <button class="btn main" id="sheetOk" data-close="1"></button>
+</div></div>
 </div>
 
 <script>
@@ -658,12 +692,17 @@ const THEMES=['nuit','ocean','foret','aurore','clair'];
 function chrome(){
   document.documentElement.dataset.theme=S.theme;
   const n=u=>words.filter(w=>u==='all'||w.u===u).length;
-  $('units').innerHTML=[['all','Tout']].concat(RAW.map(u=>[u.id,u.name])).map(([id,nm])=>`<button class="chip ${S.unit===id?'on':''}" data-u="${id}">${nm}<small>${n(id)}</small></button>`).join('');
+  const nm=id=>id==='all'?'Tout':RAW.find(u=>u.id===id).name;
+  $('units').innerHTML=[['all','Tout']].concat(RAW.map(u=>[u.id,u.name])).map(([id,t])=>`<button class="chip ${S.unit===id?'on':''}" data-u="${id}">${t}<small>${n(id)}</small></button>`).join('');
   const cats=[...new Set(words.filter(w=>S.unit==='all'||w.u===S.unit).map(w=>w.c))];
   if(S.cat!=='all'&&!cats.includes(S.cat))S.cat='all';
-  $('catSel').innerHTML=`<option value="all">Toutes les catégories (${n(S.unit)})</option>`+cats.map(c=>`<option value="${esc(c)}" ${S.cat===c?'selected':''}>${esc(c)} (${words.filter(w=>w.c===c&&(S.unit==='all'||w.u===S.unit)).length})</option>`).join('');
-  $('modes').innerHTML=[['learn','📚','Apprendre'],['cards','🃏','Cartes'],['quiz','🎯','Quiz'],['list','☰','Liste']].map(([m,i,l])=>`<button class="${S.mode===m?'on':''}" data-m="${m}" title="${l}">${i}<span class="lb"> ${l}</span></button>`).join('');
-  $('dirBtn').textContent={en:'EN → FR',fr:'FR → EN',mix:'🔀 Mixte'}[S.dir];
+  $('cats').innerHTML=`<button class="chip ${S.cat==='all'?'on':''}" data-c="all">Toutes</button>`+cats.map(c=>`<button class="chip ${S.cat===c?'on':''}" data-c="${esc(c)}">${esc(c)}<small>${words.filter(w=>w.c===c&&(S.unit==='all'||w.u===S.unit)).length}</small></button>`).join('');
+  $('modes').innerHTML=[['learn','📚','Apprendre'],['cards','🃏','Cartes'],['quiz','🎯','Quiz'],['list','☰','Liste']].map(([m,i,l])=>`<button class="${S.mode===m?'on':''}" data-m="${m}">${i} ${l}</button>`).join('');
+  $('dirs').innerHTML=[['en','EN → FR'],['fr','FR → EN'],['mix','🔀 Mixte']].map(([d,t])=>`<button class="${S.dir===d?'on':''}" data-d="${d}">${t}</button>`).join('');
+  const np=pool().length;
+  $('scopeBtn').innerHTML=`📚 ${esc(nm(S.unit))}${S.cat!=='all'?' · '+esc(S.cat):''} <small>▾</small>`;
+  $('sheetOk').textContent=`Étudier ${np} mots`;
+  $('foot').classList.toggle('hide',S.mode!=='cards');
   $('hideKnown').checked=S.hide;
   const known=Object.keys(S.known).filter(k=>S.known[k]).length;
   $('sub').textContent=`${words.length} mots · ${known} sus`;
@@ -810,7 +849,7 @@ function renderLearn(){
   if(!L)lrnStart();
   const nu=p.filter(w=>S.lvl[w.k]===undefined).length,nm=p.filter(w=>S.lvl[w.k]===0).length,n1=p.filter(w=>S.lvl[w.k]===1).length,n2=p.filter(w=>lv(w)>=2).length;
   const nd=p.filter(w=>lv(w)>=2&&(S.nx[w.k]||0)<=S.rc+1).length;
-  const stats=`<div class="lstats"><div class="lbar"><i style="width:${n2/p.length*100}%;background:#16a34a"></i><i style="width:${n1/p.length*100}%;background:#f59e0b"></i><i style="width:${nm/p.length*100}%;background:#e11d48"></i></div><div class="lleg"><span>⚪ ${nu} nouveaux</span><span>🔴 ${nm} ratés</span><span>🟠 ${n1} en cours</span><span>✅ ${n2} appris</span></div><div class="lleg" style="margin-top:2px"><span>Session : ${Math.min(SS.new,S.goal)} / ${S.goal} nouveaux mots</span></div></div>`;
+  const stats=`<div class="lstats"><div class="lbar"><i style="width:${n2/p.length*100}%;background:#16a34a"></i><i style="width:${n1/p.length*100}%;background:#f59e0b"></i><i style="width:${nm/p.length*100}%;background:#e11d48"></i></div><div class="lmeta"><span>Session <b>${Math.min(SS.new,S.goal)}/${S.goal}</b></span><span>✅ ${n2} · 🟠 ${n1} · 🔴 ${nm} · ⚪ ${nu}</span></div></div>`;
   const box=h=>{$('view').innerHTML=`<div class="q">${stats}${h}</div>`};
   if(L.fb){
     const f=L.fb,bad=f.res==='no';
@@ -833,7 +872,7 @@ function renderLearn(){
       <button class="btn main" id="ln">Tour suivant</button></div>`);
     $('ln').onclick=()=>{L=null;renderLearn()};return}
   const cur=L.q[0],w=cur.w,done=L.n-L.q.length;
-  const prog=`<div class="prog" style="max-width:none;margin:14px 0 4px"><i style="width:${done/L.n*100}%"></i></div><div class="count" style="text-align:center">${done+1} / ${L.n}${cur.rev?' · révision 🔁':''}</div>`;
+  const prog=`<div class="count" style="text-align:center;margin-top:14px">${done+1} / ${L.n}${cur.rev?' · révision 🔁':''}</div>`;
   if(cur.step===0){
     if(!cur.opts)mkOpts(cur);
     box(`${prog}<div class="qt">${esc(qOf(w))} <button class="ico" data-say="${esc(w.en)}">🔊</button></div><div class="lbl" style="text-align:center">Choisis la bonne réponse</div>
@@ -862,14 +901,17 @@ function render(){
 function reset(){deck=[];quiz=null;L=null;SS.new=0;SS.revDone=false;if(S.mode==='cards')buildDeck(false);if(S.mode==='quiz')startQuizSilent();render()}
 
 document.addEventListener('click',e=>{
-  const t=e.target.closest('[data-u],[data-m],[data-say],[data-k]');if(!e.target.closest('.menuwrap'))$('menu').classList.add('hide');if(!t)return;
+  const t=e.target.closest('[data-u],[data-c],[data-d],[data-m],[data-say],[data-k],[data-close],#scopeBtn');if(!e.target.closest('.menuwrap'))$('menu').classList.add('hide');if(!t)return;
+  if(t.id==='scopeBtn'){$('sheet').classList.remove('hide');return}
+  if(t.dataset.close){$('sheet').classList.add('hide');return}
+  if(t.dataset.c!==undefined){S.cat=t.dataset.c;save();reset();return}
+  if(t.dataset.d){S.dir=t.dataset.d;save();reset();return}
   if(t.dataset.u){S.unit=t.dataset.u;S.cat='all';save();reset()}
   else if(t.dataset.m){S.mode=t.dataset.m;save();reset()}
   else if(t.dataset.say){say(t.dataset.say)}
   else if(t.dataset.k){S.known[t.dataset.k]=!S.known[t.dataset.k];save();render()}
 });
-$('catSel').onchange=e=>{S.cat=e.target.value;save();reset()};
-$('dirBtn').onclick=()=>{S.dir={en:'fr',fr:'mix',mix:'en'}[S.dir];save();reset()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('sheet').classList.add('hide')});
 $('themeBtn').onclick=()=>{S.theme=THEMES[(THEMES.indexOf(S.theme)+1)%THEMES.length];save();chrome()};
 $('goalBtn').onclick=()=>{const g=[10,20,30,50];S.goal=g[(g.indexOf(S.goal)+1)%g.length];save();chrome();if(S.mode==='learn'){L=null;renderLearn()}};
 $('moreBtn').onclick=()=>$('menu').classList.toggle('hide');
